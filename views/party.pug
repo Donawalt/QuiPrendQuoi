@@ -2,3 +2,15 @@ include ../partials/header.pug
 h1 Qui prend quoi ?
 h2= party.name
 h3 Créé par #{party.author}
+label(for="url") Partagez l'événement
+input(id="url" value=`${url}`)
+form(method="post" action=`${process.env.FRONT_URL}:${process.env.PORT}/party/${id}/items`)
+    label(for="name") Ajouter un élèment 
+    input(id="name" name="name" required)
+    label(for="user") Utilisateur 
+    input(id="user" name="user" required)
+    button(type="submit") Créer
+h4 la liste : 
+ul
+  each val in party.items
+    li= val.name
