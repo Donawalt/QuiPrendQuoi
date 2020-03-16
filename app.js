@@ -20,4 +20,8 @@ app.post("/party", function(req, res) {
   .catch((err) => console.error(err));
 });
 
+app.get("/party/:id", function(req,res){
+  res.render("party")
+});
+
 app.listen(port, () => console.log(`Front app listening on port ${port}!`));
