@@ -14,10 +14,10 @@ app.get("/", function(req, res) {
 });
 
 app.post("/party", function(req, res) {
-    axios
+  axios
   .post(`${process.env.API_URL}/party`, req.body)
-  .then(({data}) => console.log(data))
-  .catch((err) => console.error(err));
+  .then(({ data }) => res.redirect(`/party/${data._id}`))
+  .catch((err) => res.send(err));
 });
 
 app.get("/party/:id", function(req,res){
