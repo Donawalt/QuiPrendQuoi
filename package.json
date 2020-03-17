@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently --kill-others \"npm run sass\" \"nodemon app.js\"",
+    "start": "concurrently --kill-others -n \"sass,watchify,server\" \"npm run sass\" \"npm run watchify\" \"nodemon app.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass styles/style.scss public/style.css -w --output-style compressed"
+    "sass": "node-sass styles/style.scss public/style.css -w --output-style compressed",
+    "watchify": "watchify scripts/test.js -o public/script.js -t [ babelify --presets [ @babel/preset-env babel-preset-minify ] ]"
   },
   "keywords": [],
   "author": "",
@@ -19,8 +20,13 @@
     "pug": "^2.0.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "babel-preset-minify": "^0.5.1",
+    "babelify": "^10.0.0",
     "concurrently": "^5.1.0",
     "node-sass": "^4.13.1",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "watchify": "^3.11.1"
   }
 }
