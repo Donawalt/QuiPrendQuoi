@@ -1,0 +1,25 @@
+form.newParty{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .newParty__fields {
+        margin-bottom: 1em;
+      
+        @include medium {
+          display: grid;
+          grid-template-columns: 175px 1fr;
+          grid-gap: 5px;
+          max-width: 500px;
+        }
+      
+        label {
+          @include medium {
+            place-self: center end;
+          }
+        }
+        @media screen and (max-width:403px) {
+            display: block;
+        }
+      }
+}
