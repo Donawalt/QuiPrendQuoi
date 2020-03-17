@@ -5,12 +5,21 @@ h3 Créé par #{party.author}
 label(for="url") Partagez l'événement
 input(id="url" value=`${url}`)
 form(method="post" action=`${process.env.FRONT_URL}:${process.env.PORT}/party/${id}/items`)
-    label(for="name") Ajouter un élèment 
-    input(id="name" name="name" required)
-    label(for="user") Utilisateur 
-    input(id="user" name="user" required)
+    label(for="name1") Ajouter un élèment 
+    input(id="name1" name="name" required)
+    label(for="user1") Utilisateur 
+    input(id="user1" name="user" required)
     button(type="submit") Créer
 h4 la liste : 
 ul
   each val in party.items
     li= val.name
+h4 vous pouvez modifier l'évènement ici : 
+form(method="post" action=`${process.env.FRONT_URL}:${process.env.PORT}/party/${id}`)
+  div
+    label(for="name2") Nom de l'événement
+    input(name="name" id="name2" required minlength="3" placeholder="Nouvel an")
+    label(for="author") Nom de l'Auteur
+    input(name="author" id="author" required placeholder="Auteur")
+    input(name="date" id="date" type="date")
+  button(type="submit") Modifier l'évènement 

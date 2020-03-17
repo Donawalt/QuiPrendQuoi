@@ -42,5 +42,15 @@ app.post("/party/:id/items", function(req, res) {
     .catch(err => res.send(err));
 });
 
+app.post("/party/:id", function(req,res) {
+  axios
+    .patch(`${process.env.API_URL}/party/${req.params.id}`, req.body)
+    .then(({ data }) => {
+      console.log(data);
+      res.redirect(`/party/${req.params.id}`);
+    })
+    .catch(err => res.send(err));
+})
+
 
 app.listen(port, () => console.log(`Front app listening on port ${port}!`));
