@@ -22,4 +22,6 @@ form(method="post" action=`${process.env.FRONT_URL}:${process.env.PORT}/party/${
     label(for="author") Nom de l'Auteur
     input(name="author" id="author" required placeholder="Auteur")
     input(name="date" id="date" type="date")
-  button(type="submit") Modifier l'évènement 
+  button(type="submit") Modifier l'évènement
+script.
+  party = !{JSON.stringify(party)} 

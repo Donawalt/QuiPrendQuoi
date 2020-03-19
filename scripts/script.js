@@ -1,5 +1,3 @@
 import './clipboard.js'
-
-const numbers = [1, 2, 3];
-const doubles = numbers.map(number => number * 2);
-console.log(doubles);
+import './share.js'
+import './parties.js'
