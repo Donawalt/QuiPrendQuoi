@@ -1,11 +1,17 @@
+<!DOCTYPE html>
 html(lang="fr")
   head
     title= title
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name='theme-color' content='#43dde6')
+    meta(name='msapplication-navbutton-color' content='#43dde6')
+    meta(name='description' content='Qui Prend Quoi est un outils permettant d\'organiser des évènement collaboratif')
     link(rel="stylesheet" href="/style.css")
+    link(rel="icon" href="/icone.png")
     script(src="/script.js" async)
+    link(rel="manifest" href="/manifest.json")
     script.
       if (navigator.serviceWorker) {
         console.log('All good');
@@ -16,3 +22,5 @@ html(lang="fr")
         console.log('Nothing to see here...');
       }
   body
+  header 
+      a.logo(href='/') Qui prend quoi ? 

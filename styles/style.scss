@@ -1,6 +1,7 @@
 @import './vendors/reset.scss';
 @import './config/medias.scss';
 @import './blocs/newParty.scss';
+@import './blocs/header.scss';
 
 body{
   background: #364f6b;
@@ -38,4 +39,13 @@ body{
     height: 38px;
     font-weight: bold;
   }
+    min-height: calc( 100vh - 175px );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column ;
+    section.content{
+      padding-top: 50px;
+      width:100%;
+    }
 }
