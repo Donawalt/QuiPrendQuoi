@@ -1,7 +1,7 @@
 include ../partials/header.pug
 section.content
     h2= party.name
-    h3 Créé par #{party.author}
+    h3 Créé par #{party.author} pour le #{party.date}
     label(for="url") Partagez l'événement
     input(id="url" value=`${url}` data-clipboard=`${url}` data-share-url=`${url}`)
     section.content__Item.first
@@ -16,7 +16,7 @@ section.content
         h4 La liste des items: 
         ul
           each val in party.items
-            li= val.name
+            li #{val.name} par #{val.user} 
     section.content__Item
       h4 Vous pouvez modifier l'évènement ici : 
       form(method="post" action=`${process.env.FRONT_URL}:${process.env.PORT}/party/${id}`).modifParty

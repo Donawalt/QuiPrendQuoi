@@ -27,6 +27,7 @@ app.get("/party/:id", function(req, res) {
   .get(`${process.env.API_URL}/party/${req.params.id}`)
     .then(({ data }) => {
       console.log(data);
+      
       res.render("party", {
         baseFront: `${process.env.FRONT_URL}:${process.env.PORT}`,
         party: data,
