@@ -1,7 +1,10 @@
 @import './vendors/reset.scss';
 @import './config/medias.scss';
+@import './blocs/modifParty.scss';
 @import './blocs/newParty.scss';
+@import './blocs/newElement.scss';
 @import './blocs/header.scss';
+@import './views/party.scss';
 
 body{
   background: #364f6b;
@@ -21,7 +24,11 @@ body{
     text-align: center;
   }
   h3{
-    font-size: 40px;
+    font-size: 45px;
+    margin-bottom: 15px;
+  }
+  h4{
+    font-size: 30px;
     margin-bottom: 15px;
   }
  input,button{
@@ -30,6 +37,7 @@ body{
     margin: 5px;
     margin-bottom: 10px;
     margin-top: 10px;
+    cursor: pointer;
   }
   button{
     background-color: #fc5185;
@@ -38,6 +46,7 @@ body{
     padding: 10px;
     height: 38px;
     font-weight: bold;
+    cursor: pointer;
   }
     min-height: calc( 100vh - 175px );
     display: flex;

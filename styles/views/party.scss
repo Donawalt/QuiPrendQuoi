@@ -1,0 +1,19 @@
+section.content__Item {
+    padding: 12px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border: 1px solid #fc5185;
+    li{
+        margin: 5px;
+        margin-left: 0px;
+        list-style: circle;
+        margin-left: 15px;
+    }
+    &.first{
+        @include medium {
+            display: grid ;
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: -1px;
+        }
+    }
+}

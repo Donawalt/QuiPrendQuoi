@@ -12,7 +12,7 @@ app.use(express.static('pwa'));
 app.set("view engine", "pug");
 
 app.get("/", function(req, res) {
-  res.render("index", { title: "Qui prend quoi ?" });
+  res.render("index", { title: "Qui prend quoi ?", baseFront: `${process.env.FRONT_URL}:${process.env.PORT}` });
 });
 
 app.post("/party", function(req, res) {
@@ -28,6 +28,7 @@ app.get("/party/:id", function(req, res) {
     .then(({ data }) => {
       console.log(data);
       res.render("party", {
+        baseFront: `${process.env.FRONT_URL}:${process.env.PORT}`,
         party: data,
         title: data.name,
         id: data._id,
