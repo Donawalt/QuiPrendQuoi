@@ -1,0 +1,10 @@
+{
+  "name": "QuiPrendQuoi",
+  "short_name": "QPQ",
+  "theme_color": "#43dde6",
+  "background_color": "#364f6b",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": "/icone.png"
+}

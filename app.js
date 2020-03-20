@@ -5,11 +5,11 @@ const dotenv = require("dotenv").config();
 const bodyParser = require("body-parser");
 const axios = require("axios");
 
+app.set("view engine", "pug");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(express.static('pwa'));
 
-app.set("view engine", "pug");
 
 app.get("/", function(req, res) {
   res.render("index", { title: "Qui prend quoi ?", baseFront: `${process.env.FRONT_URL}:${process.env.PORT}` });
