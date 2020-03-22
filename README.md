@@ -21,7 +21,7 @@ Socket.io est une bibliothéque qui permet une communication bi-directionelle en
 Pour sont utilisation socket.io fait donc appel à deux fichiers un utiliser coté serveur avec express et un autre coté client, il facilite l'utilisation de l'API WebSocket.
 C'est cette API qui est généralement utiliser sur les application de messagerie t'elle que messenger , ou pour des vidéos en live à plusieurs. 
 
-Pour utiliser websocket dans notre projet j'ai conçu un évènement au coté serveur au moment d'un post vers items que j'ai écouter coté client puis push un notification avec push.js.
+Pour utiliser websocket dans notre projet j'ai conçu un évènement du coté serveur au moment d'un post vers items que j'ai écouter coté client puis push un notification avec push.js.
 
 ```javascript
  io.emit("ItemsNotification", {
@@ -30,5 +30,19 @@ Pour utiliser websocket dans notre projet j'ai conçu un évènement au coté se
       });
 ```
 
+```javascript
+socket.on("ItemsNotification", function(data) {
+  Push.create("Un nouvelle item viens d'être rajouter", {
+    body: data.msg,
+    icon: "/icone.png",
+    timeout: 4000,
+    vibrate: 500,
+    onClick: function() {
+      window.focus();
+      this.close();
+    }
+  });
+});
+```
 
 
