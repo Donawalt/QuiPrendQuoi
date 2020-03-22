@@ -42,5 +42,8 @@ socket.on("ItemsNotification", function(data) {
   });
 });
 ```
-
+Pour plus d'information sur les élèments que j'ai pu tester sur se projet : 
+* https://socket.io
+* https://barba.js.org
+* https://pushjs.org
 
