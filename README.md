@@ -19,7 +19,7 @@ Ayant beaucoup passé de temps à essayer de comprendre comment fonctionner l'ap
 Socket Io est une bibliothèque qui permet une communication bi-directionelle en temps réel entre les clients web et les serveurs. Pour son utilisation socket Io fait donc appel à deux fichiers un utiliser côté serveur avec express et un autre côté client, il facilite l'utilisation de l'API Web socket.
 C'est cette API qui est généralement utilisée sur les applications de messagerie t'elle que messenger, ou pour des vidéos en live à plusieurs. 
 
-Pour utiliser web socket dans notre projet j'ai conçu un évènement du coté serveur au moment d'un poste items que j'ai écouté côté client puis push une notification avec push js.
+Pour utiliser web socket dans notre projet j'ai conçu un évènement du coté serveur au moment d'un post items que j'ai écouté côté client puis push une notification avec push js.
 
 ```javascript
  io.emit("ItemsNotification", {
